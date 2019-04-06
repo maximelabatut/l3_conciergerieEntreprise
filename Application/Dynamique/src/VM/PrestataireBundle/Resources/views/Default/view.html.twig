@@ -1,0 +1,57 @@
+{% extends 'VMCoreBundle::layout.html.twig' %}
+{% block title %}Espace prestataire{% endblock %}
+{% block bodyWithoutFooter %}
+{{ parent() }}
+<section id="commentaires" class="container content-section text-center">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 ">
+			<p>Vos commentaires : </p>
+			{% if lesCommentaires %}				
+			<div class="table-responsive">
+				<table class="table table-bordered fondtableau">
+					<thead>
+						<tr>
+							<th class="text-center">#</th>
+							<th class="text-center">Pseudo</th>
+							<th class="text-center">Service</th>
+							<th class="text-center">Commentaire</th>
+							<th class="text-center">Date</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for unCommentaire in lesCommentaires %}	
+						<tr>
+							<th scope="row">{{ unCommentaire.idCommentaire }}</th>
+							<td>{{ unCommentaire.username }}</td>
+							<td>{{ unCommentaire.libelleService }}</td>
+							<td>{{ unCommentaire.commentaire }}</td>
+							<td>{{ unCommentaire.dateCommentaire }}</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+			<a href="{{ path('vm_prestataire_homepage') }}" class="btn btn-primary">Quitter</a>	<br/>	<br/>
+			{% else %}
+				<div> Vous n'avez pas de commentaire sur le service sélectionné précédemment.</div><br/>	
+				<a href="{{ path('vm_prestataire_homepage') }}" class="btn btn-primary">Quitter</a>	<br/>	<br/>
+			{% endif %}	
+		</div>
+	</div>
+</section>
+{% endblock %}
+{% block navbar %}
+ 
+{% endblock %}
+
+{% block h2Title %}
+	<p class="intro-text">Visualisation commentaire <br/>
+{% endblock %}
+{% block footerLiens %}
+ <h3> Visualisation commentaire  </h3>
+    <ul>
+        <li>
+            <a href="{{ path('vm_prestataire_homepage') }}">Quitter</a>
+        </li>
+    </ul>
+{% endblock %}

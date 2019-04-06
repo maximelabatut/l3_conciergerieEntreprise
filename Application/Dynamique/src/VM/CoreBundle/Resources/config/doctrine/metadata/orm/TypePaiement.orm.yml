@@ -1,0 +1,22 @@
+TypePaiement:
+    type: entity
+    table: type_paiement
+    id:
+        idtypepaiement:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idTypePaiement
+            generator:
+                strategy: IDENTITY
+    fields:
+        libelletypepaiement:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: true
+            column: libelleTypePaiement
+    lifecycleCallbacks: {  }

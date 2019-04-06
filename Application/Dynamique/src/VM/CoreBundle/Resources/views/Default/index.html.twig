@@ -1,0 +1,132 @@
+{% extends 'VMCoreBundle::layout.html.twig' %}
+
+{% block bodyWithoutFooter %}
+{{ parent() }}
+	<section id="servicesproposes" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+				<br/>
+                <h2>Services proposés</h2>                 
+				<p>La conciergerie d'entreprise met à votre disposition des services à la personne mais aussi des services spécifiques à vos besoin : </p> 
+				<ul class="list-unstyled ecriturecalibri">
+					<li>Livraison de vos courses alimentaires.</li> 
+					<li>Dépôt de vêtements au pressing.</li> 
+					<li>Repassage...</li> 
+				</ul>
+				<p class="imageunderline">Connectez-vous à votre espace pour voir les services qui vous sont proposés et les commander !</p>
+					<img class="imagesServices zoomarticle" src="{{ asset('images/courses.jpg') }}"  alt="Livraison de vos courses" />&nbsp;&nbsp;&nbsp;&nbsp;
+					<img class="imagesServices zoomarticle" src="{{ asset('images/pressing.jpg') }}"  alt="Pressing" />&nbsp;&nbsp;&nbsp;&nbsp;
+					<img class="imagesServices zoomarticle" src="{{ asset('images/repassage.jpg') }}" alt="Repassage" />&nbsp;&nbsp;&nbsp;&nbsp;
+				<br/><br/>	
+			</div>
+        </div>
+    </section>
+	
+	<section id="bouquets" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+				<br/>
+                <h2>Bouquets & Abonnements</h2>
+				<p>La conciergerie d'entreprise propose des bouquets contenant divers types de services à des prix intéressants ainsi que des abonnements : </p> 
+				<ul class="list-unstyled ecriturecalibri">
+					<li>Le bouquet "beauté" contient une manucure, une coupe de cheveux ainsi qu'un massage.</li> 
+					<li>Le bouquet "à la personne" comprenant la livraison de vos courses alimentaires et le nettoyage/ménage.</li> 
+					<li>Le bouquet "vêtement" contenant le repassage, pressing et retouche.</li> 
+				</ul>				
+				<p class="imageunderline">Ces bouquets sont disponibles uniquement par abonnement mensuel, cependant vous pouvez l'arrêter à tout moment.</p>
+				<img class="imagesServices zoomarticle" src="{{ asset('images/bouquetsServices.jpg') }}" alt="Bouquets" />
+				<br/><br/>
+			</div>
+        </div>
+    </section>
+	
+	<section id="commandes" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+				<br/>
+                <h2>Commandes</h2>
+                <p>Grâce au site de la conciergerie d'entreprise, vous pouvez commander vos bouquets et services avec différent mode de paiement.
+				Vous pouvez bien entendu suivre l'état de votre commande, la modifier ou encore l'annuler si le délai le permet.
+				De plus, vous avez la possibilité de voir vos factures ainsi que de les télécharger.
+				</p>    
+				<img class="imagesServices zoomarticle" src="{{ asset('images/commande.png') }}" alt="Commander" />&nbsp;&nbsp;&nbsp;&nbsp;
+				<img class="imagesServices zoomarticle" src="{{ asset('images/commandeBis.png') }}" alt="Livraison commande" />
+			<br/><br/>
+			</div>
+        </div>
+    </section>
+	
+	<section id="faq" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+				<div class="faq_container faqsize">
+					<h2>F.A.Q</h2>
+					<p>Bienvenue à la foire aux questions, ici vous trouverez les réponses aux questions qui nous sont fréquemment posées.</p> 
+					<div class="faq">
+						<div class="faq_question">Q : Comment se connecter ?</div>
+						<div class="faq_answer_container">
+							<div class="faq_answer"> A : En haut à droite de l'écran vous avez connexion, il suffit de rentrer les identifiants que l'on vous a donné pour accéder à votre espace ! </div>
+						</div>        
+					</div>
+					<div class="faq">
+						<div class="faq_question">Q : J'ai une erreur lors du chargement de la page que faire ? </div>
+						<div class="faq_answer_container">
+							<div class="faq_answer">A : Recharger la page grâce à F5 si l'erreur se produit toujours, c'est que le site est en maintenance.</div>
+						</div>        
+					</div>
+					<div class="faq">
+						<div class="faq_question">Q : Peut on commander des services unitaires en plus d'abonnement à des bouquets ? </div>
+						<div class="faq_answer_container">
+							<div class="faq_answer">A : Bien sûr !</div>
+						</div>        
+					</div>
+					<div class="faq">
+						<div class="faq_question">Q : J'ai un problème avec ma commande que faire ?</div>
+						<div class="faq_answer_container">
+							<div class="faq_answer">A : Contactez l'administrateur du site (voir le bas de page)</div>
+						</div>        
+					</div>
+					<div class="faq">
+						<div class="faq_question">Q : Quels sont les moyens de paiement disponibles ? </div>
+						<div class="faq_answer_container">
+							<div class="faq_answer">A : Carte bleue, Chèque Bancaire, Paypal. Pour les paiements par chèque la commande sera expédiée à la validation de ce dernier.</div>
+						</div>        
+					</div>
+					<div class="faq">
+						<div class="faq_question">Q : Qu'est ce qu'un salarié ? </div>
+						<div class="faq_answer_container">
+							<div class="faq_answer">
+								<iframe class="largeurvideo" src="https://www.youtube.com/embed/kn68qqE0acE"></iframe>
+							</div>
+						</div>        
+					</div>
+					<div class="faq">
+						<div class="faq_question">Q : Qu'est ce qu'un administrateur salarié ? </div>
+						<div class="faq_answer_container">
+							<div class="faq_answer">
+								<iframe class="largeurvideo" src="https://www.youtube.com/embed/PJ-tX5dpX70"> </iframe>
+							</div>
+						</div>        
+					</div>
+					<div class="faq">
+						<div class="faq_question"> Q : Qu'est ce qu'une entreprise cliente ?</div>
+						<div class="faq_answer_container">
+							<div class="faq_answer">
+								<iframe class="largeurvideo" src="http://www.synapse-o-coeur.com/index.php/aimez-vos-clients-differenciez-vous/mobiliser-et-motiver-vos-equipes-pour-satisfaire-vos-client"> </iframe>
+							</div>
+						</div>        
+					</div>
+					<div class="faq">
+						<div class="faq_question">Q : Qu'est ce qu'un prestataire ? </div>
+						<div class="faq_answer_container">
+							<div class="faq_answer">
+								<iframe class="largeurvideo" src="https://www.youtube.com/embed/FrprzEFXhwE"> </iframe>
+							</div>
+						</div>        
+					</div>
+				</div>
+				<br/>
+			</div>
+        </div>
+    </section>
+{% endblock %}

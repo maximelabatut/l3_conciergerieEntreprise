@@ -1,0 +1,22 @@
+TypeService:
+    type: entity
+    table: type_service
+    id:
+        idtypeservice:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idTypeService
+            generator:
+                strategy: IDENTITY
+    fields:
+        libelletypeservice:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: true
+            column: libelleTypeService
+    lifecycleCallbacks: {  }

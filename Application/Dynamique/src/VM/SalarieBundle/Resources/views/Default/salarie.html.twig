@@ -1,0 +1,200 @@
+{% extends 'VMCoreBundle::layout.html.twig' %}
+{% block title %}Espace salarié{% endblock %}
+{% block bodyWithoutFooter %}
+{{ parent() }}
+<section id="services" class="container content-section text-center ">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">  
+            <p> Consulter les services</p>
+            <div class="table-responsive">
+                <table class="table table-bordered fondtableau">
+                    <thead>
+						<tr>
+							<th class="text-center">#</th>
+							<th class="text-center">Service</th>
+							<th class="text-center">Description</th>
+							<th class="text-center">Type de service</th>
+							<th class="text-center">Prix</th>
+						</tr>
+					</thead>
+					<tbody>
+					{% if lesServices %}
+						{% for service in lesServices %}
+						<tr>
+							<th scope="row">{{ service.idService }}</th>
+							<td>{{ service.libelleService }}</td>              
+							<td>{{ service.descriptionService }} </td>
+							<td>{{ service.libelleTypeService }} </td>
+							<td>{{ service.prixService }} €</td>
+						</tr>
+						{% endfor %}
+					{% else %}
+						<td> Pas de service disponible </td>
+					{% endif %}
+					</tbody>
+                </table>
+            </div>
+        </div>
+        <br/>
+    </div>
+</section>
+ 
+<section id="commandes" class="container content-section text-center">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <p> Consultation des commandes</p>
+            <div class="table-responsive">
+                <table class="table table-bordered fondtableau">
+                    <thead>
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th class="text-center">Contenu</th>
+                            <th class="text-center">Date de prise de la commande</th>
+                            <th class="text-center">Date de livraison de la commande</th>
+                            <th class="text-center">Prix</th>                            
+                            <th class="text-center">Etat commande</th>
+							<th></th>
+							<th></th>
+							<th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% if lesCommandes %}
+							{% for commande in lesCommandes %}
+						<tr>						
+                            <th scope="row">{{ commande.idCommande }}</th>           
+                            <td>{{ commande.libelleService }}</td>
+                            <td>{{ commande.datePriseCommande }}</td>
+                            <td>{{ commande.datecommande }}</td>
+                            <td>{{ commande.prixService }} €</td>
+							<td>{{ commande.libelleTypeEtat }}</td>
+                            {% if commande.libelleTypeEtat != "Terminée" %}<td><a href="#"><img src="{{ asset('images/payer.png') }}" height="32" title="Payer" alt="Payer"/></a></td>{% else %}<td></td>{% endif %}
+							{% if commande.libelleTypeEtat != "Terminée" %}
+							<td><a href="{{ path('vm_salarie_viewupdatecommande', {'id': commande.idCommande}) }}"><img src="{{ asset('images/modifier.png') }}" height="32" title="Modifier" alt="Modifier"/></a></td>
+							{% else %}<td></td>{% endif%}
+                            {% if commande.libelleTypeEtat != "Terminée" %}<td><a href="{{ path('vm_salarie_deletecommentaire', {'id': commande.idCommande}) }}"><img src="{{ asset('images/Trash.png') }}" height="32" title="Supprimer" alt="Supprimer"/></a></td>{% else %}<td></td>{% endif%}
+						</tr>
+						{% endfor %}
+						{% else %}
+							<td> Pas de commande en cours </td>
+						{% endif %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="faq_container">
+                <div class="serviceForm">
+                    <div class="serviceFormQues">Saisir une commande</div>
+                    <div class="service_form_container">
+                        <div class="service_answer">
+                            <div id="ajoutService" class="ajoutService">
+                            {% if lesServices %}
+								<div class="container" style="margin-left:-17%">
+								<div>Services : </div>													
+									<form method="post" action="{{ path('vm_salarie_addcommande') }}">
+										<select class="form-control centrage" id="serviceACommander" name="serviceACommander" style="width:50%;"> 
+										{% for service in lesServices %}										
+											<option value="{{ service.idService }}">{{ service.libelleService }} - {{ service.prixService }} €</option>						
+										{% endfor %}
+										</select>				
+										<button type="submit" class="btn btn-primary">Ajouter</button>
+									</form>
+								{% else %}
+									<div> Pas de service disponible </div>
+								{% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>        
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="commentaires" class="container content-section text-center">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <p> Ajout de commentaire</p>
+			<form method="post" action="{{ path('vm_salarie_addcommentaire') }}">
+                <div class="form-inline form-group row">
+                    <label for="serviceCommentaire" class="col-2 col-form-label text-center">Saisir le service : </label>         
+					{% if lesServicesCommandes %}
+                    <select class="form-control centrage" id="serviceCommentaire" name="serviceCommentaire" style="width:50%;"> 
+					{% for serviceCommande in lesServicesCommandes %}										
+						<option value="{{ serviceCommande.idService }}">{{ serviceCommande.libelleService }}</option>						
+                    {% endfor %}
+					</select>				
+					{% else %}
+						<div> Pas de service commandé </div>
+					{% endif %}
+                </div>        
+                <div class="form-inline form-group row">
+                    <label for="description" class="col-2 col-form-label description" style="padding-left:90px;">Commentaire :</label>                        
+                    <textarea class="form-control centrage" id="description" name="description" rows="3" placeholder="Commentaire" style="width:50%; resize:none;" required></textarea>                  
+					<button type="submit" class="btn btn-primary">Ajouter</button>
+				</div>        
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block navbarLiens %}
+<div class="collapse navbar-collapse navbar-right navbar-main-collapse navbar-administrateur">
+    <ul class="nav navbar-nav">
+        <li class="hidden">
+            <a href="#page-top"></a>
+        </li>
+        <li>
+            <a class="page-scroll" href="#intro">Accueil</a>
+        </li>
+        <li>
+            <a class="page-scroll" href="#services">Liste services</a>
+        </li>
+        <li>
+             <a class="page-scroll" href="#commandes">Commandes</a>
+        </li>
+        <li>
+            <a class="page-scroll" href="#commentaires">Commentaire</a>
+        </li>
+		<li>
+            <a class="page-scroll" href="{{ path('logout') }}">{% block connexion %}Bonjour {{ app.user.username }},{% endblock %} Déconnexion ?</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block flashbag %} 
+	{% if app.session.flashbag.has('notice') %}     
+        <div class="alert alert-danger">
+            {% for flashMessage in app.session.flashbag.get('notice') %}
+ 
+                {{ flashMessage }}
+ 
+            {% endfor %}
+        </div>
+	{% endif %}	
+{% endblock %}
+
+{% block h2Title %}
+	<p class="intro-text">Page salarié <br/>
+{% endblock %}
+{% block footerLiens %}
+ <h3> Espace Salarié </h3>
+    <ul>
+        <li>
+            <a class="page-scroll" href="#intro">Accueil</a>
+        </li>
+        <li>
+            <a class="page-scroll" href="#services">Liste services</a>
+        </li>
+        <li>
+            <a class="page-scroll" href="#commandes">Commandes</a>
+        </li>
+        <li>
+            <a class="page-scroll" href="#commentaire">Commentaire</a>
+        </li>
+		<li>
+            <a class="page-scroll" href="{{ path('logout') }}">Déconnexion</a>
+        </li>
+    </ul>
+{% endblock %}

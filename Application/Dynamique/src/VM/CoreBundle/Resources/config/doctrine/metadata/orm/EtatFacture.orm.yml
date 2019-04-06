@@ -1,0 +1,22 @@
+EtatFacture:
+    type: entity
+    table: etat_facture
+    id:
+        idtypeetatfacture:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idTypeEtatFacture
+            generator:
+                strategy: IDENTITY
+    fields:
+        libelletypeetatfacture:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: true
+            column: libelleTypeEtatFacture
+    lifecycleCallbacks: {  }

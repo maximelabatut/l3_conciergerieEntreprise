@@ -1,0 +1,4 @@
+services:
+#    vm_administrateur.example:
+#        class: VM\AdministrateurBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

@@ -1,0 +1,45 @@
+Bouquet:
+    type: entity
+    table: bouquet
+    indexes:
+        FK_Bouquet_Administrateur:
+            columns:
+                - idUtilisateur
+    id:
+        idbouquet:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idBouquet
+            generator:
+                strategy: IDENTITY
+    fields:
+        idutilisateur:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: idUtilisateur
+        libellebouquet:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: true
+            column: libelleBouquet
+        descriptionbouquet:
+            type: text
+            nullable: true
+            length: 65535
+            options:
+                fixed: false
+            column: descriptionBouquet
+        prixmensuel:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: prixMensuel
+    lifecycleCallbacks: {  }

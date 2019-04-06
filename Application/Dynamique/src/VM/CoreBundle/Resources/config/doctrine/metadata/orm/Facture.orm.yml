@@ -1,0 +1,47 @@
+Facture:
+    type: entity
+    table: facture
+    indexes:
+        FK_Facture_Abonnement:
+            columns:
+                - idAbonnement
+        FK_Facture_Etat_facture:
+            columns:
+                - idTypeEtatFacture
+        FK_Facture_Commande:
+            columns:
+                - idCommande
+    id:
+        idfacture:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idFacture
+            generator:
+                strategy: IDENTITY
+    fields:
+        idabonnement:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: idAbonnement
+        idtypeetatfacture:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: idTypeEtatFacture
+        idcommande:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: idCommande
+        datefacture:
+            type: date
+            nullable: true
+            column: dateFacture
+    lifecycleCallbacks: {  }

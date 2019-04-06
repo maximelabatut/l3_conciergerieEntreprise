@@ -1,0 +1,24 @@
+vm_client_homepage:
+    path:     /client
+    defaults: { _controller: VMClientBundle:Client:index }
+vm_client_addBouquet:
+    path:     /client/addBouquet
+    defaults: { _controller: VMClientBundle:Client:addBouquet }
+vm_client_deletesalarie:
+    path:      /client/delete/{id}
+    defaults:
+        _controller: VMClientBundle:Client:deleteSalarie
+    requirements:
+        id: \d+
+vm_client_updateabonnement:
+    path:      /client/update/{id}
+    defaults:
+        _controller: VMClientBundle:Client:modifierAbonnement
+    requirements:
+        id: \d+    
+vm_client_updateservice:
+    path:      /client/updateService/{id}
+    defaults:
+        _controller: VMClientBundle:Client:modifierEtatService
+    requirements:
+        id: \d+   

@@ -1,0 +1,28 @@
+Etatservice:
+    type: entity
+    table: etatservice
+    indexes:
+        FK_EtatService_Service:
+            columns:
+                - idService
+    id:
+        idutilisateur:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idUtilisateur
+        idservice:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idService
+    fields:
+        etat:
+            type: boolean
+            nullable: true
+            column: Etat
+    lifecycleCallbacks: {  }

@@ -1,0 +1,3 @@
+https://github.com/winzou/OCPlatform/blob/master/src/OC/PlatformBundle/Controller/AdvertController.php
+
+suivi commande : Select libelleTypeEtat FROM type_etat_commande NATURAL join commande where idCommande = 2 AND idUtilisateur=6

@@ -1,0 +1,29 @@
+vm_salarie_homepage:
+    path:     /salarie
+    defaults: { _controller: VMSalarieBundle:Salarie:index }
+
+vm_salarie_addcommentaire:
+    path:     /salarie/addCommentaire
+    defaults: { _controller: VMSalarieBundle:Salarie:addCommentaire }
+
+vm_salarie_addcommande:
+    path:     /salarie/addCommande
+    defaults: { _controller: VMSalarieBundle:Salarie:addCommande }
+
+vm_salarie_deletecommentaire:
+    path:      /salarie/delete/{id}
+    defaults:
+        _controller: VMSalarieBundle:Salarie:deleteCommande
+    requirements:
+        id: \d+
+
+vm_salarie_viewupdatecommande:
+    path:      /salarie/update/{id}
+    defaults:
+        _controller: VMSalarieBundle:Salarie:viewUpdateCommande
+    requirements:
+        id: \d+
+
+vm_salarie_updatecommande:
+    path:     /salarie/updateCommande
+    defaults: { _controller: VMSalarieBundle:Salarie:updateCommande }

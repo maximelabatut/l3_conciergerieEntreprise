@@ -1,0 +1,20 @@
+vm_prestataire_homepage:
+    path:     /prestataire
+    defaults: { _controller: VMPrestataireBundle:Prestataire:index }
+
+vm_prestataire_viewcommentaire:
+    path:      /prestataire/viewCommentaire
+    defaults:
+        _controller: VMPrestataireBundle:Prestataire:viewCommentaire
+
+vm_prestataire_addservice:
+    path:      /prestataire/addService
+    defaults:
+        _controller: VMPrestataireBundle:Prestataire:addService
+
+vm_prestataire_deleteservice:
+    path:      /prestataire/delete/{id}
+    defaults:
+        _controller: VMPrestataireBundle:Prestataire:deleteService
+    requirements:
+        id: \d+

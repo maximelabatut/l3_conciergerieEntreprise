@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- user-scalable=no-->
+	<title>Prestataire</title>
+	<link rel="icon" type="image/png" href="../images/logo.png" />    
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../style/css/conciergerie.css" rel="stylesheet"> 
+	<link href="../style/font-awesome/css/font-awesome.min.css" rel="stylesheet"> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="../bootstrap/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+	<script src="../style/js/hex_md5.js"></script>
+	<script src="../style/js/conciergerie.js"></script>
+	
+</head>		
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+<!-- barre de navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                     <i class="fa fa-bars"></i>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+					<li>
+                        <a class="page-scroll" href="#intro">Accueil</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services">Liste services</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#commentaires">Commentaires</a>
+                    </li>
+					<li>
+                        <a class="page-scroll" href="#">Déconnexion</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+	<!-- entête -->
+    <header class="intro" id="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 ecritureindex" >
+                        <h1 class="brand-heading">Conciergerie d'Entreprise</h1>
+                        <p class="intro-text">Site statique, responsive web design, avec bootstrap.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+	
+	<!-- Consultation et mise à jour des services -->
+	<section id="services" class="container content-section text-center ">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">	
+			<p> Consulter et gérer vos services</p>
+				<div class="table-responsive">
+				<table class="table table-bordered fondtableau">
+					<thead>
+					<tr>
+						<th class="text-center">#</th>
+						<th class="text-center">Service</th>
+						<th class="text-center">Description</th>
+						<th class="text-center">Type de service</th>
+						<th class="text-center">Prix</th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td>Livraison de courses alimentaires</td>				
+						<!--<td><span style="position:relative;" onmouseover="event.target.disabled=false;" onmouseout="event.target.disabled=true;">
+						<textarea rows="2" name="course" style="border:none; text-align:center; resize:none; background-color:white;"disabled
+						>Livraison de courses alimentaires</textarea>
+						</span></td>-->
+						<td>Une personne fait vos courses et vous les livres sur votre lieu de travail.</td>
+						<td>Tous</td>
+						<td>30 €</td>
+						<td>
+						
+<div id="oModal" class="oModal">
+  <div>
+    <header>
+      <a href="#fermer" title="Fermer la fenêtre" class="droite">X</a><br/>
+       <h2>Modification</h2>
+     </header>
+     <section>
+		<div class="form-inline form-group row">
+			<label for="service" class="col-2 col-form-label">Saisir le service : </label>						
+			<input class="form-control centrage" type="text" id="service" value="Livraison de courses alimentaires" style="width:50%;" required>						
+		</div>
+		<div class="form-inline form-group row">
+			<label for="prix" class="col-2 col-form-label">Prix du service :  </label>						
+			<input class="form-control centrage" type="text" id="prix" value="100.0" style="width:50%;" required>						
+		</div>
+		<div class="form-inline form-group row">
+			<label for="description" class="col-2 col-form-label description">Description :</label>						
+			<textarea class="form-control centrage" id="description" rows="3" placeholder="Desription du service" style="width:50%; resize:none;" required>Une personne fait vos courses et vous les livres sur votre lieu de travail.</textarea>						
+		</div>
+		<div class="form-inline form-group row">
+			<label for="services" style="padding-left : 10px;">Choisir le type de service : </label>
+			<select class="form-control centrage" id="services" style="width:50%; background-color : white; padding-top : 5px; ">
+				<option >Aucun choix...</option>
+				<option value="tous" selected>Tous</option>
+				<option value="salaries">Salariés</option>
+			</select>					
+			<button type="submit" class="btn btn-primary">Modifier</button>
+		</div>
+     </section>
+     <footer class="cf">
+      <a href="#fermer" class="btn droite" title="Fermer la fenêtre">Fermer</a>
+     </footer>
+  </div>
+</div>
+ 
+<a href="#oModal"><img src="../images/modifier.png" height="32" title="Modifier" alt="Modifier"/></a>
+						
+						</td>
+						<td><a href=""><img src="../images/Trash.png" height="32" title="Supprimer" alt="Supprimer"/></a></td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td>Dépôt de vetement pressing</td>
+						<td>Une personne vient chercher vos vêtements pour les emmener au pressing et vous les rammène ensuite.</td>
+						<td>Tous</td>
+						<td>15 €</td>
+						<td><a href="#"><img src="../images/modifier.png" height="32" title="Modifier" alt="Modifier"/></a></td>
+						<td><a href="#"><img src="../images/Trash.png" height="32" title="Supprimer" alt="Supprimer"/></a></td>
+					</tr>
+					<tr>
+						<th scope="row">3</th>
+						<td>Repassage</td>
+						<td>Une personne repasse vos vêtements pour vous.</td>
+						<td>Tous</td>
+						<td>20 €</td>
+						<td><a href="#"><img src="../images/modifier.png" height="32" title="Modifier" alt="Modifier"/></a></td>
+						<td><a href="#"><img src="../images/Trash.png" height="32" title="Supprimer" alt="Supprimer"/></a></td>
+					</tr>
+					<tr>
+						<th scope="row">4</th>
+						<td>Coiffeur</td>
+						<td>Un coiffeur vient sur place pour vous couper les cheveux.</td>
+						<td>Salariés</td>
+						<td>14.9 €</td>
+						<td><a href="#"><img src="../images/modifier.png" height="32" title="Modifier" alt="Modifier"/></a></td>
+						<td><a href="#"><img src="../images/Trash.png" height="32" title="Supprimer" alt="Supprimer"/></a></td>
+					</tr>
+					<tr>
+						<th scope="row">5</th>
+						<td>Manucure</td>
+						<td>Une personne vient vous faire une manucure sur votre lieu de travail.</td>
+						<td>Salariés</td>
+						<td>50 €</td>
+						<td><a href="#"><img src="../images/modifier.png" height="32" title="Modifier" alt="Modifier"/></a></td>
+						<td><a href="#"><img src="../images/Trash.png" height="32" title="Supprimer" alt="Supprimer"/></a></td>
+					</tr>
+					<tr>
+						<th scope="row">6</th>
+						<td>Etc...</td>
+						<td>Une description.</td>
+						<td>Aucun choix</td>
+						<td>$$$$$</td>
+						<td><a href="#"><img src="../images/modifier.png" height="32" title="Modifier" alt="Modifier"/></a></td>
+						<td><a href="#"><img src="../images/Trash.png" height="32" title="Supprimer" alt="Supprimer"/></a></td>
+					</tr>
+				</tbody>
+				</table>
+				</div>
+				<div class="faq_container">
+					<div class="serviceForm">
+					<div class="serviceFormQues">Cliquez ici pour ajouter un service.</div>
+						<div class="service_form_container">
+					<div class="service_answer">
+					<div id="ajoutService" class="ajoutService">
+				<form>
+					<div class="form-inline form-group row">
+						<label for="service" class="col-2 col-form-label text-center">Saisir le service : </label>						
+							<input class="form-control centrage" type="text" id="service" placeholder="Service" style="width:50%;" required>						
+					</div>
+					<div class="form-inline form-group row">
+						<label for="prix" class="col-2 col-form-label" style="padding-left:5px;">Prix du service : </label>						
+							<input class="form-control centrage" type="text" id="prix" placeholder="Prix" style="width:50%;" required>						
+					</div>
+					<div class="form-inline form-group row">
+						<label for="description" class="col-2 col-form-label description" style="padding-left : 30px;">Description :</label>						
+						<textarea class="form-control centrage" id="description" rows="3" placeholder="Desription du service" style="width:50%; resize:none;" required></textarea>						
+					</div>
+					<div class="form-inline form-group row">
+					<label style="padding-left : 10px;">Choisir le type de service : </label>
+					<select class="form-control centrage" id="services2" style="width:50%; background-color : white; padding-top : 5px;">
+						<option selected>Aucun choix...</option>
+						<option value="tous">Tous</option>
+						<option value="salaries">Salariés</option>
+					</select>					
+					<button type="submit" class="btn btn-primary">Ajouter</button>
+					</div>
+				</form>
+				</div>
+					</div>
+						</div>        
+					</div>
+				</div>
+			<br/>
+            </div>
+        </div>
+    </section>
+	<!-- Consultation des commentaires -->
+	<section id="commentaires" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 ">
+			<p>Consultation des commentaires</p>
+				<form class="form-inline">
+					<label>Choisir le service : </label>
+					<select class="form-control centrage" id="services3" style=" width:50%; background-color : white; padding-top : 5px;">
+						<option selected>Aucun choix...</option>
+						<option value="Courses">Livraison de courses</option>
+						<option value="Pressing">Pressing</option>
+						<option value="Repassage">Repassage</option>
+						<option value="Coiffeur">Coiffeur</option>
+						<option value="Manucure">Manucure</option>
+						<option value="etc">Etc...</option>
+					</select>
+					<button type="submit" class="btn btn-primary">Valider</button>
+				</form>
+				<br />
+		<div class="table-responsive">
+			<table class="table table-bordered fondtableau">
+				<thead>
+					<tr>
+						<th class="text-center">#</th>
+						<th class="text-center">Pseudo</th>
+						<th class="text-center">Service</th>
+						<th class="text-center">Titre</th>
+						<th class="text-center">Commentaire</th>
+						<th class="text-center">Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td>Vincent</td>
+						<td>Test</td>
+						<td>Un service sympa !</td>
+						<td>Très bon service, cependant manque de rapidité.</td>
+						<td>5 Janvier 2017 à 11:02</td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td>Maxime</td>
+						<td>Test</td>
+						<td>Des vêtements bien repassés</td>
+						<td>Un service très utile, je le recommande.</td>
+						<td>3 Janvier 2017 à 18:45</td>
+					</tr>
+					<tr>
+						<th scope="row">3</th>
+						<td>TitiGrosMinet</td>
+						<td>Test</td>
+						<td>Bof ...</td>
+						<td>Service utile mais mal fait, dommage !</td>
+						<td>8 Janvier 2017 à 9:21</td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+			</div>
+		</div>
+    </section>
+	
+	<footer>
+    <div class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6 test">
+                    <h3> Prestataire <br/><br/></h3>
+                    <ul>
+						<li> <a class="page-scroll" href="#intro"> Accueil </a> </li>
+                        <li> <a class="page-scroll" href="#services"> Liste services </a> </li>
+                        <li> <a class="page-scroll" href="#commentaires"> Commentaires </a> </li>
+						<li> <a class="page-scroll" href="#"> Déconnexion </a> </li>
+                    </ul>
+                </div>
+				<div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 apropos text-center">
+                    <h3> A propos de la Conciergerie </h3>
+                    <ul>
+						<li class="faqsize">
+							Site web responsive design réalisé dans le cadre 
+						    du projet informatique de la Licence 3 MIAGE à l'Université 
+						    d'Orléans (Professeur : Mr Rakotozafy) 							
+						</li>
+                        
+                    </ul>
+                </div>
+                <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 test3">
+                    <h3> Contactez nous par email </h3>
+                    <ul>
+                        <li>
+                            <div class="input-append contact-box text-center">
+                                <input type="text" class="full text-center" placeholder="Adresse mail" name="mail">
+                                <button class="btn  bg-gray" type="button"> Envoyer <i class="fa fa-long-arrow-right"> </i> </button>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="social">
+                        <li> <a href="https://www.facebook.com/AmigoMiageOrleans/?fref=ts" target="_blank"> <i class=" fa fa-facebook">   </i> </a> </li>
+                        <li> <a href="https://www.youtube.com/watch?v=4ghoUNACxXE" target="_blank"> <i class="fa fa-youtube">   </i> </a> </li>
+						<li> <i> <img src="../images/w3c.png" alt="W3c" />  </i> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <div class="footer-bottom">
+        <div class="container">
+            <p class="pull-left test2"> Copyright &copy; Vincent Oczachowski - Maxime Labatut 2016-2017. All right reserved. </p>            
+        </div>
+    </div>
+</footer>
+</body>
+</html>

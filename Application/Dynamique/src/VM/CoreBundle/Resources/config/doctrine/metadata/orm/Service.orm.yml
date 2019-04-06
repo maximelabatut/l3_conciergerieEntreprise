@@ -1,0 +1,63 @@
+Service:
+    type: entity
+    table: service
+    indexes:
+        FK_Service_Prestataire:
+            columns:
+                - idUtilisateurPrestataire
+        FK_Service_Type_service:
+            columns:
+                - idTypeService
+        FK_Service_Administrateur:
+            columns:
+                - idUtilisateurAdministrateur
+    id:
+        idservice:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idService
+            generator:
+                strategy: IDENTITY
+    fields:
+        idtypeservice:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: idTypeService
+        idutilisateuradministrateur:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: idUtilisateurAdministrateur
+        idutilisateurprestataire:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: idUtilisateurPrestataire
+        libelleservice:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: true
+            column: libelleService
+        prixservice:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: prixService
+        descriptionservice:
+            type: text
+            nullable: true
+            length: 65535
+            options:
+                fixed: false
+            column: descriptionService
+    lifecycleCallbacks: {  }

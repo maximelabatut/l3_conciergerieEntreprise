@@ -1,0 +1,44 @@
+Abonnement:
+    type: entity
+    table: abonnement
+    indexes:
+        FK_Abonnement_Entreprise_cliente:
+            columns:
+                - idUtilisateur
+        FK_Abonnement_Bouquet:
+            columns:
+                - idBouquet
+    id:
+        idabonnement:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idAbonnement
+            generator:
+                strategy: IDENTITY
+    fields:
+        idbouquet:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: idBouquet
+        idutilisateur:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: idUtilisateur
+        dureeabonnement:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: dureeAbonnement
+        datedebabonnement:
+            type: date
+            nullable: true
+            column: dateDebAbonnement
+    lifecycleCallbacks: {  }

@@ -1,0 +1,60 @@
+Commentaire:
+    type: entity
+    table: commentaire
+    indexes:
+        FK_Commentaire_Administrateur:
+            columns:
+                - idUtilisateurAdministrateur
+        FK_Commentaire_Service:
+            columns:
+                - idService
+        FK_Commentaire_Salarie:
+            columns:
+                - idUtilisateurSalarie
+    id:
+        idcommentaire:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idCommentaire
+            generator:
+                strategy: IDENTITY
+    fields:
+        idservice:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: idService
+        idutilisateuradministrateur:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: idUtilisateurAdministrateur
+        idutilisateursalarie:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: idUtilisateurSalarie
+        commentaire:
+            type: text
+            nullable: true
+            length: 65535
+            options:
+                fixed: false
+        reponsecommentaire:
+            type: text
+            nullable: true
+            length: 65535
+            options:
+                fixed: false
+            column: reponseCommentaire
+        datecommentaire:
+            type: date
+            nullable: true
+            column: dateCommentaire
+    lifecycleCallbacks: {  }

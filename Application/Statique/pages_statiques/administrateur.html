@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Administrateur</title>
+	<link rel="icon" type="image/png" href="../images/logo.png" />    
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../style/css/conciergerie.css" rel="stylesheet"> 
+	<link href="../style/font-awesome/css/font-awesome.min.css" rel="stylesheet"> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="../bootstrap/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+	<script src="../style/js/hex_md5.js"></script>
+	<script src="../style/js/conciergerie.js"></script>
+</head>		
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+<!-- barre de navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                     <i class="fa fa-bars"></i>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse navbar-administrateur">
+                <ul class="nav navbar-nav">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+					<li>
+                        <a class="page-scroll" href="#intro">Accueil</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#listeprestataire">Liste prestataires</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#listeentreprisecliente">Liste entreprises clientes</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#tarifbouquet">Tarif bouquets</a>
+                    </li>
+					<li>
+                        <a class="page-scroll" href="#abonnementAdmin">Abonnements</a>
+                    </li>
+					<li>
+                        <a class="page-scroll" href="#commandeAdmin">Commandes</a>
+                    </li>
+					<li>
+                        <a class="page-scroll" href="#">Déconnexion</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+	<!-- entête -->
+    <header class="intro" id="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 ecritureindex">
+                        <h1 class="brand-heading">Conciergerie d'Entreprise</h1>
+                        <p class="intro-text">Site statique, responsive web design, avec bootstrap.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+	
+	<!-- contenu de l'index -->
+	<section id="listeprestataire" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+			<br/><br/><br/>
+			<p> Liste des prestataires</p>
+				<div class="table-responsive">
+				<table class="table table-bordered fondtableau">
+					<thead>
+					<tr>
+						<th class="text-center">#</th>
+						<th class="text-center">Nom</th>
+						<th class="text-center">Prénom</th>
+						<th class="text-center">Responsable Service</th>
+						<th class="text-center">Adresse</th>
+						<th class="text-center">Mail</th>
+						<th class="text-center">Tel</th>
+						<th class="text-center">Login</th>
+						<th class="text-center">Mot de passe</th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td>Durif</td>				
+						<td>Sylvain</td>
+						<td>Vente de flute de pan</td>
+						<td>666, rue de Mars 66666 Mars</td>
+						<td>oriana@petitshommesvert.campagne</td>
+						<td>0666666666</td>
+						<td>Oriana</td>
+						<td>5e4d5f44e86s2</td>
+						<td>
+						<div id="oModal" class="oModal">
+  <div>
+    <header>
+      <a href="#fermer" title="Fermer la fenêtre" class="droite">X</a><br/>
+     </header>
+     <section>
+		<form>
+					<div class="form-inline form-group row ">
+						<label for="prénomPresta" class="col-2 col-form-label largeurslabel" >Saisir le prénom : </label>						
+							<input class="form-control centrage largeurslabel" type="text" id="prénomPresta"  required>						
+					</div>
+					<div class="form-inline form-group row ">
+						<label for="nomPresta" class="col-2 col-form-label largeurslabel ">Saisir le nom :  </label>						
+							<input class="form-control centrage largeurslabel" type="text" id="nomPresta"  required>						
+					</div>
+					<div class="form-inline form-group row ">
+						<label for="respServ" class="col-2 col-form-label largeurslabel ">Responsable service :  </label>						
+							<input class="form-control centrage largeurslabel" type="text" id="respServ"  required>						
+					</div>
+					<div class="form-inline form-group row">
+						<label for="adressePresta" class="col-2 col-form-label largeurslabel">Adresse :  </label>						
+							<input class="form-control centrage largeurslabel" type="text" id="adressePresta" required>						
+					</div>
+					<div class="form-inline form-group row">
+						<label for="mailPresta" class="col-2 col-form-label largeurslabel">Mail :  </label>						
+							<input class="form-control centrage largeurslabel" type="text" id="mailPresta"  required>						
+					</div>
+					<div class="form-inline form-group row">
+						<label for="telPresta" class="col-2 col-form-label largeurslabel">Tél:  </label>						
+							<input class="form-control centrage largeurslabel" type="text" id="telPresta" required>						
+					</div>
+					<button type="submit" class="btn btn-primary">Ajouter</button>
+				</form>	
+     </section>
+     <footer class="cf">
+      <a href="#fermer" class="btn droite" title="Fermer la fenêtre">Fermer</a>
+     </footer>
+  </div>
+</div>
+ 
+<a href="#oModal"><img src="../images/modifier.png" height="32" title="Modifier" alt="Modifier"/></a>
+						
+						</td>
+						<td><a href="#"><img src="../images/Trash.png" height="32" title="Supprimer" alt="Supprimer"/></a></td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td>Trump</td>				
+						<td>Donald</td>
+						<td>Vente de mur</td>
+						<td>Trump Tower, Mexique</td>
+						<td>donaldtrump@whitehouse.gov</td>
+						<td>$$$$$$$$$$$$</td>
+						<td>Canard</td>
+						<td>98efds56vf84ez</td>
+						<td><a href="#"><img src="../images/modifier.png" height="32" title="Modifier" alt="Modifier"/></a></td>
+						<td><a href="#"><img src="../images/Trash.png" height="32" title="Supprimer" alt="Supprimer"/></a></td>
+					</tr>
+					<tr>
+						<th scope="row">3</th>
+						<td>Moutarde</td>				
+						<td>Maquereau</td>
+						<td>Vente de sardines</td>
+						<td>Océan Pacifique, Dijon</td>
+						<td>bandedepoisson@ocean.terre</td>
+						<td>00000000000</td>
+						<td>Saupiquet</td>
+						<td>ed845s45sqed4536ez54</td>
+						<td><a href="#"><img src="../images/modifier.png" height="32" title="Modifier" alt="Modifier"/></a></td>
+						<td><a href="#"><img src="../images/Trash.png" height="32" title="Supprimer" alt="Supprimer"/></a></td>
+					</tr>
+					<tr>
+						<th scope="row">4</th>
+						<td>Bon</td>				
+						<td>Jean</td>
+						<td>Vente de cochon de lait</td>
+						<td>Ferme, Célébrité</td>
+						<td>truie@boue.miam</td>
+						<td>0000007700</td>
+						<td>FleuryMichon</td>
+						<td>9854654ze654dsq!</td>
+						<td><a href="#"><img src="../images/modifier.png" height="32" title="Modifier" alt="Modifier"/></a></td>
+						<td><a href="#"><img src="../images/Trash.png" height="32" title="Supprimer" alt="Supprimer"/></a></td>
+					</tr>
+				</tbody>
+				</table>
+				</div>
+				<div class="faq_container">
+					<div class="serviceForm">
+					<div class="serviceFormQues">Cliquez ici pour ajouter un prestataire.</div>
+						<div class="service_form_container">
+					<div class="service_answer">
+					<div id="ajoutService" class="ajoutService">
+				<form>
+					<div class="form-inline form-group row ">
+						<label for="prénomPresta" class="col-2 col-form-label largeurslabel" >Saisir le prénom : </label>						
+							<input class="form-control centrage largeurslabel" type="text" id="prénomPresta"  required>						
+					</div>
+					<div class="form-inline form-group row ">
+						<label for="nomPresta" class="col-2 col-form-label largeurslabel ">Saisir le nom :  </label>						
+							<input class="form-control centrage largeurslabel" type="text" id="nomPresta"  required>						
+					</div>
+					<div class="form-inline form-group row ">
+						<label for="respServ" class="col-2 col-form-label largeurslabel ">Responsable service :  </label>						
+							<input class="form-control centrage largeurslabel" type="text" id="respServ"  required>						
+					</div>
+					<div class="form-inline form-group row">
+						<label for="adressePresta" class="col-2 col-form-label largeurslabel">Adresse :  </label>						
+							<input class="form-control centrage largeurslabel" type="text" id="adressePresta" required>						
+					</div>
+					<div class="form-inline form-group row">
+						<label for="mailPresta" class="col-2 col-form-label largeurslabel">Mail :  </label>						
+							<input class="form-control centrage largeurslabel" type="text" id="mailPresta"  required>						
+					</div>
+					<div class="form-inline form-group row">
+						<label for="telPresta" class="col-2 col-form-label largeurslabel">Tél:  </label>						
+							<input class="form-control centrage largeurslabel" type="text" id="telPresta" required>						
+					</div>
+					<div class="form-inline form-group row">
+						<label for="loginPresta" class="col-2 col-form-label largeurslabel">Login :  </label>						
+							<input class="form-control centrage largeurslabel" type="text" id="loginPresta" required>						
+					</div>
+					<div class="form-inline form-group row">
+						<label for="passPresta" class="col-2 col-form-label " style="width:275px;">Mot de passe :  </label>						
+							<input class="form-control centrage largeurslabel" type="text" id="passPresta" required>		
+					<button type="submit" class="btn btn-primary">Ajouter</button>
+					</div>
+				</form>			
+					</div>
+						</div>        
+					</div>
+				</div>
+			<br/>
+            </div>
+        </div>
+		</div>
+    </section>
+	<section id="listeentreprisecliente" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">			
+			<br/><br/><br/>
+			<p> Liste des entreprises clientes</p>
+				<div class="table-responsive">
+				<table class="table table-bordered fondtableau">
+					<thead>
+					<tr>
+						<th class="text-center">#</th>
+						<th class="text-center">Nom Entreprise</th>
+						<th class="text-center">Responsable Entreprise</th>
+						<th class="text-center">Numéro SIRET</th>
+						<th class="text-center">Adresse</th>
+						<th class="text-center">Mail</th>
+						<th class="text-center">Tel</th>
+						<th class="text-center">Login</th>
+						<th class="text-center">Mot de passe</th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td>Un peu d'Hair</td>				
+						<td>Didier Mècheblonde</td>
+						<td>404 833 048 00022</td>
+						<td>42, Rue de la Frange, Orléans</td>
+						<td>coiffeur@petitecoupe.hair</td>
+						<td>0666666666</td>
+						<td>DidierMècheRebelle</td>
+						<td>5e4d5f44e86s2</td>
+						<td>
+							<div id="oModal1" class="oModal">
+  <div>
+    <header>
+      <a href="#fermer" title="Fermer la fenêtre" class="droite">X</a><br/>
+     </header>
+     <section>
+		<form>
+					<div class="form-inline form-group row">
+						<label for="prénomPresta" class="col-2 col-form-label largeurslabel">Nom entreprise : </label>						
+							<input class="form-control centrage largeurslabel" type="text" id="prénomPresta2"  required>						
+					</div>
+					<div class="form-inline form-group row">
+						<label for="nomPresta" class="col-2 col-form-label largeurslabel">Responsable entreprise :  </label>						
+							<input class="form-control centrage largeurslabel" type="text" id="nomPresta2" required>						
+					</div>
+					<div class="form-inline form-group row">
+						<label for="respServ" class="col-2 col-form-label largeurslabel">Numéro SIRET :  </label>						
+							<input class="form-control centrage largeurslabel" type="text" id="respServ2" required>						
+					</div>
+					<div class="form-inline form-group row">
+						<label for="adressePresta" class="col-2 col-form-label largeurslabel">Adresse :  </label>						
+							<input class="form-control centrage largeurslabel" type="text" id="adressePresta2"   required>						
+					</div>
+					<div class="form-inline form-group row">
+						<label for="mailPresta" class="col-2 col-form-label largeurslabel">Mail :  </label>						
+							<input class="form-control centrage largeurslabel" type="text" id="mailPresta2" required>						
+					</div>
+					<div class="form-inline form-group row">
+						<label for="telPresta" class="col-2 col-form-label largeurslabel">Tél:  </label>						
+							<input class="form-control centrage largeurslabel" type="text" id="telPresta2" required>						
+					</div><button type="submit" class="btn btn-primary">Ajouter</button>
+		</form>
+     </section>
+     <footer class="cf">
+      <a href="#fermer" class="btn droite" title="Fermer la fenêtre">Fermer</a>
+     </footer>
+  </div>
+</div>
+ 
+<a href="#oModal1"><img src="../images/modifier.png" height="32" title="Modifier" alt="Modifier"/></a>
+						</td>
+						<td><a href="#"><img src="../images/Trash.png" height="32" title="Supprimer" alt="Supprimer"/></a></td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td>test</td>				
+						<td>test</td>
+						<td>test</td>
+						<td>test</td>
+						<td>dtest</td>
+						<td>test</td>
+						<td>test</td>
+						<td>test</td>
+						<td><a href="#"><img src="../images/modifier.png" height="32" title="Modifier" alt="Modifier"/></a></td>
+						<td><a href="#"><img src="../images/Trash.png" height="32" title="Supprimer" alt="Supprimer"/></a></td>
+					</tr>
+					<tr>
+						<th scope="row">3</th>
+						<td>test</td>				
+						<td>test</td>
+						<td>test</td>
+						<td>test</td>
+						<td>dtest</td>
+						<td>test</td>
+						<td>test</td>
+						<td>test</td>
+						<td><a href="#"><img src="../images/modifier.png" height="32" title="Modifier" alt="Modifier"/></a></td>
+						<td><a href="#"><img src="../images/Trash.png" height="32" title="Supprimer" alt="Supprimer"/></a></td>
+					</tr>
+					<tr>
+						<th scope="row">4</th>
+						<td>test</td>				
+						<td>test</td>
+						<td>test</td>
+						<td>test</td>
+						<td>dtest</td>
+						<td>test</td>
+						<td>test</td>
+						<td>test</td>
+						<td><a href="#"><img src="../images/modifier.png" height="32" title="Modifier" alt="Modifier"/></a></td>
+						<td><a href="#"><img src="../images/Trash.png" height="32" title="Supprimer" alt="Supprimer"/></a></td>
+					</tr>
+				</tbody>
+				</table>
+				</div>
+				<div class="faq_container">
+					<div class="serviceForm">
+					<div class="serviceFormQues">Cliquez ici pour ajouter une Entreprise cliente.</div>
+						<div class="service_form_container">
+					<div class="service_answer">
+					<div id="ajoutService2" class="ajoutService">
+				<form>
+					<div class="form-inline form-group row">
+						<label for="prénomPresta" class="col-2 col-form-label largeurslabel">Nom entreprise : </label>						
+							<input class="form-control centrage largeurslabel" type="text" id="prénomPresta2"  required>						
+					</div>
+					<div class="form-inline form-group row">
+						<label for="nomPresta" class="col-2 col-form-label largeurslabel">Responsable entreprise :  </label>						
+							<input class="form-control centrage largeurslabel" type="text" id="nomPresta2" required>						
+					</div>
+					<div class="form-inline form-group row">
+						<label for="respServ" class="col-2 col-form-label largeurslabel">Numéro SIRET :  </label>						
+							<input class="form-control centrage largeurslabel" type="text" id="respServ2" required>						
+					</div>
+					<div class="form-inline form-group row">
+						<label for="adressePresta" class="col-2 col-form-label largeurslabel">Adresse :  </label>						
+							<input class="form-control centrage largeurslabel" type="text" id="adressePresta2"   required>						
+					</div>
+					<div class="form-inline form-group row">
+						<label for="mailPresta" class="col-2 col-form-label largeurslabel">Mail :  </label>						
+							<input class="form-control centrage largeurslabel" type="text" id="mailPresta2" required>						
+					</div>
+					<div class="form-inline form-group row">
+						<label for="telPresta" class="col-2 col-form-label largeurslabel">Tél:  </label>						
+							<input class="form-control centrage largeurslabel" type="text" id="telPresta2" required>						
+					</div>
+					<div class="form-inline form-group row">
+						<label for="loginPresta" class="col-2 col-form-label largeurslabel">Login :  </label>						
+							<input class="form-control centrage largeurslabel" type="text" id="loginPresta2" required>						
+					</div>
+					<div class="form-inline form-group row">
+						<label for="passPresta" class="col-2 col-form-label largeurslabel" style="width:275px;">Mot de passe :  </label>						
+							<input class="form-control centrage largeurslabel" type="text" id="passPresta2" required>		
+					<button type="submit" class="btn btn-primary">Ajouter</button>
+				</div>
+				</form>
+				
+					</div>
+						</div>        
+					</div>
+				</div>
+			<br/>
+            </div>
+			</div>
+        </div>
+    </section>
+	<section id="tarifbouquet" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+			<br/><br/><br/>
+				<p> Gestion de la tarification des bouquets</p>
+				<form>
+					<div class="form-inline form-group row">
+					<label for="listeBouquet" style="padding-left : 10px;">Bouquet : </label>
+					<select class="form-control centrage" id="listeBouquet" style="width:35%; background-color : white; padding-top : 5px;">
+						<option selected>Bouquet beauté</option>
+						<option>Bouquet voitrure</option>
+						<option>Bouquet vêtement</option>
+					</select>					
+					</div>
+					<div class="form-inline form-group row">
+						<label class="col-2 col-form-label" style="padding-left:100px;">Prix :  </label>						
+							<input class="form-control centrage" type="number" step="any" min="0" value="30" id="prixBouquet" style="width:35%;" required>		
+					<button type="submit" class="btn btn-primary">Fixer</button>
+					</div>
+				</form>		
+				<p> Le bouquet Beauté a été fixé pour 30€</p>
+			</div>
+		</div>
+    </section>
+	<section id="abonnementAdmin" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+				<br/><br/><br/>
+				<p> Gestion des abonnements</p>
+				<div class="table-responsive">
+				<table class="table table-bordered fondtableau">
+					<thead>
+					<tr>
+						<th class="text-center">#</th>
+						<th class="text-center">Durée de l'abonnement</th>
+						<th class="text-center">Date début abonnement</th>
+						<th class="text-center">Date fin abonnement</th>
+						<th class="text-center">Libellé du bouquet</th>
+						<th class="text-center">Nom de l'entreprise cliente</th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td>3 mois</td>				
+						<td>16 Novembre 2016</td>
+						<td>16 Janvier 2017</td>
+						<td>Bouquet Beauté</td>
+						<td>Un peu d'hair</td>
+						<td>
+						<div id="oModal2" class="oModal">
+  <div>
+    <header>
+      <a href="#fermer" title="Fermer la fenêtre" class="droite">X</a><br/>
+     </header>
+     <section>
+		<form>
+					<div class="form-inline form-group row">
+						<label for="duree" class="col-2 col-form-label largeurslabel">Durée abonnement    : </label>						
+							<input class="form-control centrage largeurslabel" type="text" id="duree"  required>						
+					</div>
+					<div class="form-inline form-group row">
+						<label for="datedeb" class="col-2 col-form-label largeurslabel">Date debut :  </label>						
+							<input class="form-control centrage largeurslabel" type="date" id="datedeb" required>						
+					</div>
+					<div class="form-inline form-group row">
+						<label for="bouquetlib" class="col-2 col-form-label largeurslabel">Libellé bouquet :  </label>						
+							<input class="form-control centrage largeurslabel" type="text" id="bouquetlib" required>						
+					</div>
+					<div class="form-inline form-group row">
+						<label for="adresseclient" class="col-2 col-form-label largeurslabel">Adresse :  </label>						
+							<input class="form-control centrage largeurslabel" type="text" id="adresseclient"   required>						
+					</div>
+					<div class="form-inline form-group row">
+			<label for="bouqetchoix" class="col-2 col-form-label largeurslabel">Choisir le type de bouquet : </label>
+			<select class="form-control centrage" id="bouqetchoix" style="width:33%; background-color : white; padding-top : 5px;">
+				<option >Aucun choix...</option>
+				<option value="2" selected>Beauté</option>
+				<option value="1">Pratique</option>
+			</select>			
+		</div><button type="submit" class="btn btn-primary">Modifier</button>
+		</form>
+     </section>
+     <footer class="cf">
+      <a href="#fermer" class="btn droite" title="Fermer la fenêtre">Fermer</a>
+     </footer>
+  </div>
+</div>
+<a href="#oModal2"><img src="../images/modifier.png" height="32" title="Modifier" alt="Modifier"/></a>
+						</td>
+						<td><a href="#"><img src="../images/unsubscribe.png" height="56" title="desabonner" alt="Desabonner"/></a></td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td>3 mois</td>				
+						<td>16 Novembre 2016</td>
+						<td>16 Janvier 2017</td>
+						<td>Bouquet Beauté</td>
+						<td>Un peu d'hair</td>
+						<td><a href="#"><img src="../images/modifier.png" height="32" title="Modifier" alt="Modifier"/></a></td>
+						<td><a href="#"><img src="../images/unsubscribe.png" height="56" title="desabonner" alt="Desabonner"/></a></td>
+					</tr>
+					<tr>
+						<th scope="row">3</th>
+						<td>3 mois</td>				
+						<td>16 Novembre 2016</td>
+						<td>16 Janvier 2017</td>
+						<td>Bouquet Beauté</td>
+						<td>Un peu d'hair</td>
+						<td><a href="#"><img src="../images/modifier.png" height="32" title="Modifier" alt="Modifier"/></a></td>
+						<td><a href="#"><img src="../images/unsubscribe.png" height="56" title="desabonner" alt="Desabonner"/></a></td>
+					</tr>
+					<tr>
+						<th scope="row">4</th>
+						<td>3 mois</td>				
+						<td>16 Novembre 2016</td>
+						<td>16 Janvier 2017</td>
+						<td>Bouquet Beauté</td>
+						<td>Un peu d'hair</td>
+						<td><a href="#"><img src="../images/modifier.png" height="32" title="Modifier" alt="Modifier"/></a></td>
+						<td><a href="#"><img src="../images/unsubscribe.png" height="56" title="desabonner" alt="Desabonner"/></a></td>
+					</tr>
+				</tbody>
+				</table>
+				</div>
+			</div>
+        </div>
+    </section>
+	<section id="commandeAdmin" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+				<br/><br/><br/>
+				<p> Gestion des commandes</p>
+				<div class="table-responsive">
+				<table class="table table-bordered fondtableau">
+					<thead>
+					<tr>
+						<th class="text-center">Numéro de commande</th>
+						<th class="text-center">Client</th>
+						<th class="text-center">Date de commande</th>
+						<th class="text-center">Date de livraison</th>
+						<th class="text-center">Service(s)</th>
+						<th class="text-center">Bouquet(s)</th>
+						<th class="text-center">Etat de la commande</th>
+						<th class="text-center">Type de paiement</th>
+						<th class="text-center">Prix</th>
+						<th></th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">18895467</th>	
+						<td>Jeanne</td>
+						<td>10 Janvier 2017</td>
+						<td>16 Janvier 2017</td>
+						<td>Aucun</td>
+						<td>Bouquet "Beauté" </td>
+						<td>En cours de livraison</td>
+						<td><a href="#"><img src="../images/paypal.jpg" height="32" title="paypal" alt="paypal"/></a></td>
+						<td>30€</td>
+						<td class="dropDownList">
+							<select>
+								<option selected>En cours de livraison</option>
+								<option>Validée</option>
+								<option>En attente</option>
+								<option>Annulée</option>
+							</select>
+						</td>
+						<td>
+							<div id="oModal3" class="oModal">
+  <div>
+    <header>
+      <a href="#fermer" title="Fermer la fenêtre" class="droite">X</a><br/>
+     </header>
+     <section>
+		<form>
+					<div class="form-inline form-group row">
+						<label for="dateliv" class="col-2 col-form-label largeurslabel">Date livraison   : </label>						
+							<input class="form-control centrage largeurslabel" type="date" id="dateliv"  required>						
+					</div>
+					<div class="form-inline form-group row">
+			<label for="bouqetchoix" class="col-2 col-form-label largeurslabel">Etat de la commande : </label>
+			<select class="form-control centrage" id="bouqetchoix" style="width:33%; background-color : white; padding-top : 5px;">
+					<option>En cours de livraison</option>
+					<option selected>Validée</option>
+					<option>En attente</option>
+					<option>Annulée</option>
+			</select>			
+		</div><button type="submit" class="btn btn-primary">Modifier</button>
+		</form>
+     </section>
+     <footer class="cf">
+      <a href="#fermer" class="btn droite" title="Fermer la fenêtre">Fermer</a>
+     </footer>
+  </div>
+</div>
+<a href="#oModal3"><img src="../images/modifier.png" height="32" title="Modifier" alt="Modifier"/></a>
+						</td>
+						<td><a href="#"><img src="../images/Trash.png" height="32" title="Supprimer" alt="Supprimer"/></a></td>
+					</tr>
+					<tr>
+						<th scope="row">18895468</th>	
+						<td>Jean-Marie</td>
+						<td>10 Janvier 2017</td>
+						<td>16 Janvier 2017</td>
+						<td>Courses Alimentaire</td>
+						<td>Aucun bouquet</td>
+						<td>Validée</td>
+						<td><a href="#"><img src="../images/cb.png" height="32" title="cb" alt="cb"/></a></td>
+						<td>15€</td>
+						<td class="dropDownList">
+							<select>
+								<option>En cours de livraison</option>
+								<option selected>Validée</option>
+								<option>En attente</option>
+								<option>Annulée</option>
+							</select>
+						</td>
+						<td><a href="#"><img src="../images/modifier.png" height="32" title="Modifier" alt="Modifier"/></a></td>
+						<td><a href="#"><img src="../images/Trash.png" height="32" title="Supprimer" alt="Supprimer"/></a></td>
+					</tr>
+					<tr>
+						<th scope="row">18895469</th>	
+						<td>Marine</td>
+						<td>10 Janvier 2017</td>
+						<td>16 Janvier 2017</td>
+						<td>Repassage</td>
+						<td>Bouquet "Beauté" </td>
+						<td>En attente</td>
+						<td><a href="#"><img src="../images/paypal.jpg" height="32" title="paypal" alt="paypal"/></a></td>
+						<td>60€</td>
+						<td class="dropDownList">
+							<select>
+								<option>En cours de livraison</option>
+								<option>Validée</option>
+								<option selected>En attente</option>
+								<option>Annulée</option>
+							</select>
+						</td>
+						<td><a href="#"><img src="../images/modifier.png" height="32" title="Modifier" alt="Modifier"/></a></td>
+						<td><a href="#"><img src="../images/Trash.png" height="32" title="Supprimer" alt="Supprimer"/></a></td>
+					</tr>
+					<tr>
+						<th scope="row">18895470</th>	
+						<td>Marion</td>
+						<td>10 Janvier 2017</td>
+						<td>NC</td>
+						<td>Aucun</td>
+						<td>Bouquet "Voiture" </td>
+						<td>Annulée</td>
+						<td><a href="#"><img src="../images/cb.png" height="32" title="cb" alt="cb"/></a></td>
+						<td>30€</td>
+						<td class="dropDownList">
+							<select>
+								<option>En cours de livraison</option>
+								<option>Validée</option>
+								<option>En attente</option>
+								<option selected>Annulée</option>
+							</select>
+						</td>
+						<td><a href="#"><img src="../images/modifier.png" height="32" title="Modifier" alt="Modifier"/></a></td>
+						<td><a href="#"><img src="../images/Trash.png" height="32" title="Supprimer" alt="Supprimer"/></a></td>
+					</tr>
+				</tbody>
+				</table>
+				</div>
+			</div>
+        </div>
+    </section>
+	<footer>
+    <div class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6 test">
+                    <h3> Administrateur <br/><br/></h3>
+                    <ul>
+						<li> <a class="page-scroll" href="../index.html"> Accueil </a> </li>
+                        <li> <a class="page-scroll" href="#"> Liste prestataires </a> </li>
+                        <li> <a class="page-scroll" href="#"> Liste entreprises clientes </a> </li>
+                        <li> <a class="page-scroll" href="#"> Tarification bouquets </a> </li>
+                        <li> <a class="page-scroll" href="#"> Abonnements </a> </li>
+						<li> <a class="page-scroll" href="#"> Commandes </a> </li>
+						<li> <a class="page-scroll" href="#"> Déconnexion </a> </li>
+                    </ul>
+                </div>
+				<div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 apropos text-center">
+                    <h3> A propos de la Conciergerie </h3>
+                    <ul>
+						<li class="faqsize">
+							Site web responsive design réalisé dans le cadre 
+						    du projet informatique de la Licence 3 MIAGE à l'Université 
+						    d'Orléans (Professeur : Mr Rakotozafy) 							
+						</li>
+                        
+                    </ul>
+                </div>
+                <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 test3">
+                    <h3> Contactez nous par email </h3>
+                    <ul>
+                        <li>
+                            <div class="input-append contact-box text-center">
+                                <input type="text" class="full text-center" placeholder="Adresse mail" name="mail">
+                                <button class="btn  bg-gray" type="button"> Envoyer <i class="fa fa-long-arrow-right"> </i> </button>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="social">
+                        <li> <a href="https://www.facebook.com/AmigoMiageOrleans/?fref=ts" target="_blank"> <i class=" fa fa-facebook">   </i> </a> </li>
+                        <li> <a href="https://www.youtube.com/watch?v=4ghoUNACxXE" target="_blank"> <i class="fa fa-youtube">   </i> </a> </li>
+						<li> <i> <img src="../images/w3c.png" alt="W3c" />  </i> </li>
+					</ul>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <div class="footer-bottom">
+        <div class="container">
+            <p class="pull-left test2"> Copyright &copy; Vincent Oczachowski - Maxime Labatut 2016-2017. All right reserved. </p>            
+        </div>
+    </div>
+</footer>
+</body>
+</html>

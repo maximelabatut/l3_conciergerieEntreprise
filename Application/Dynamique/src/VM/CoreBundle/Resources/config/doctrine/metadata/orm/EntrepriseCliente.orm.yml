@@ -1,0 +1,105 @@
+EntrepriseCliente:
+    type: entity
+    table: entreprise_cliente
+    uniqueConstraints:
+        username:
+            columns:
+                - username
+    id:
+        idutilisateur:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idUtilisateur
+            generator:
+                strategy: IDENTITY
+    fields:
+        rueentreprise:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: true
+            column: rueEntreprise
+        villeentreprise:
+            type: string
+            nullable: true
+            length: 30
+            options:
+                fixed: true
+            column: villeEntreprise
+        cpentreprise:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: cpEntreprise
+        siretentreprise:
+            type: string
+            nullable: true
+            length: 30
+            options:
+                fixed: true
+            column: siretEntreprise
+        raisonsocialeentreprise:
+            type: string
+            nullable: true
+            length: 30
+            options:
+                fixed: true
+            column: raisonSocialeEntreprise
+        username:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: true
+        password:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: true
+        adressemailutilisateur:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: true
+            column: adresseMailUtilisateur
+        telutilisateur:
+            type: string
+            nullable: true
+            length: 12
+            options:
+                fixed: true
+            column: telUtilisateur
+        nomutilisateur:
+            type: string
+            nullable: true
+            length: 30
+            options:
+                fixed: true
+            column: nomUtilisateur
+        prenomutilisateur:
+            type: string
+            nullable: true
+            length: 30
+            options:
+                fixed: true
+            column: prenomUtilisateur
+        salt:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: true
+        roles:
+            type: array
+            nullable: false
+            length: null
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

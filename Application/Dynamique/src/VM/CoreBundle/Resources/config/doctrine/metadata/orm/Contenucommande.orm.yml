@@ -1,0 +1,23 @@
+Contenucommande:
+    type: entity
+    table: contenucommande
+    indexes:
+        FK_contenuCommande_Service:
+            columns:
+                - idService
+    id:
+        idcommande:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idCommande
+        idservice:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idService
+    lifecycleCallbacks: {  }

@@ -1,0 +1,23 @@
+Lotservicebouquet:
+    type: entity
+    table: lotservicebouquet
+    indexes:
+        FK_LotServiceBouquet_Type_service:
+            columns:
+                - idTypeService
+    id:
+        idbouquet:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idBouquet
+        idtypeservice:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idTypeService
+    lifecycleCallbacks: {  }

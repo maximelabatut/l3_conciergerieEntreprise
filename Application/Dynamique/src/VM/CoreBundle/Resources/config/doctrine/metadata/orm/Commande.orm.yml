@@ -1,0 +1,51 @@
+Commande:
+    type: entity
+    table: commande
+    indexes:
+        FK_Commande_Salarie:
+            columns:
+                - idUtilisateur
+        FK_Commande_Type_paiement:
+            columns:
+                - idTypePaiement
+        FK_Commande_Type_etat_commande:
+            columns:
+                - idTypeEtat
+    id:
+        idcommande:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idCommande
+            generator:
+                strategy: IDENTITY
+    fields:
+        idtypepaiement:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: idTypePaiement
+        idtypeetat:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: idTypeEtat
+        idutilisateur:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: idUtilisateur
+        dateprisecommande:
+            type: date
+            nullable: true
+            column: datePriseCommande
+        datelivraisoncommande:
+            type: date
+            nullable: true
+            column: dateLivraisonCommande
+    lifecycleCallbacks: {  }

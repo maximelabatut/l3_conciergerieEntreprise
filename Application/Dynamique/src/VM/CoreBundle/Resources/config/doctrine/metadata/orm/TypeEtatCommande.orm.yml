@@ -1,0 +1,22 @@
+TypeEtatCommande:
+    type: entity
+    table: type_etat_commande
+    id:
+        idtypeetat:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idTypeEtat
+            generator:
+                strategy: IDENTITY
+    fields:
+        libelletypeetat:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: true
+            column: libelleTypeEtat
+    lifecycleCallbacks: {  }

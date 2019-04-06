@@ -1,0 +1,4 @@
+services:
+#    vm_client.example:
+#        class: VM\ClientBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

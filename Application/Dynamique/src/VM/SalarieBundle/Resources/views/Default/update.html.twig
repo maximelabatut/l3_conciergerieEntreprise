@@ -1,0 +1,40 @@
+{% extends 'VMCoreBundle::layout.html.twig' %}
+{% block title %}Modifier Commande{% endblock %}
+{% block bodyWithoutFooter %}
+{{ parent() }}
+<section id="services" class="container content-section text-center ">
+	Modification de la commande n° {{ idCommande }}
+	{% if lesServices %}													
+		<form  method="post" action="{{ path('vm_salarie_updatecommande') }}">
+			<input type="text" id="idCommande" name="idCommande" value="{{ idCommande }}" hidden>
+			<select class="form-control centrage" id="serviceCommandeModifier" name="serviceCommandeModifier" style="width:50%;"> 
+			{% for service in lesServices %}										
+				<option value="{{ service.idService }}">{{ service.libelleService }} - {{ service.prixService }} €</option>						
+			{% endfor %}
+			</select><br/>				
+			<button type="submit" class="btn btn-primary">Modifier</button>
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="{{ path('vm_salarie_homepage') }}" class="btn btn-primary">Quitter</a>			
+		</form>
+	{% else %}
+		<div> Pas de service disponible </div>
+	{% endif %}
+	<br/>
+</section>
+{% endblock %}
+
+{% block navbar %}
+ 
+{% endblock %}
+
+{% block h2Title %}
+	<p class="intro-text">Modification commande <br/>
+{% endblock %}
+{% block footerLiens %}
+ <h3> Modification de commande </h3>
+    <ul>
+        <li>
+            <a href="{{ path('vm_salarie_homepage') }}">Quitter</a>
+        </li>
+    </ul>
+{% endblock %}
